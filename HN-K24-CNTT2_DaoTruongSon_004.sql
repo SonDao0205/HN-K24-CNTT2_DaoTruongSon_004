@@ -69,16 +69,6 @@ INSERT INTO Order_Detail(order_detail_id,order_id,product_id,quantity,unit_price
 (4,4,'P005',1,1299000),
 (5,5,'P004',1,599000);
 
-SELECT * FROM Orders;
-SELECT * FROM User;
-SELECT * FROM Order_Detail;
-SELECT * FROM Product;
-
-DELETE FROM Orders;
-DELETE FROM User;
-DELETE FROM Order_Detail;
-DELETE FROM Product;
-
 -- Cập nhật thông tin người dùng. Hãy viết câu lệnh cập nhật số điện thoại của người dùng có user_id = 'U003' thành "096532628".
 UPDATE User
 SET user_phone = '096532628'
@@ -119,7 +109,6 @@ LIMIT 3;
 SELECT user_id,user_name
 FROM User
 LIMIT 3 OFFSET 2;
-
 
 -- PHẦN 3: Truy vấn dữ liệu nâng cao
 -- Hiển thị danh sách đơn hàng gồm: order_id, user_name (từ bảng User), order_date và total_price. Chỉ lấy những đơn hàng có order_status = 'Completed'.
