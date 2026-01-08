@@ -19,7 +19,7 @@ CREATE table Product(
 CREATE table Orders(
 	order_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id VARCHAR(5),
-    foreign key(user_id) references User(user_id),
+    foreign key(user_id) references User(user_id) ON DELETE CASCADE,
     order_date DATE NOT NULL,
     total_price DECIMAL(10,2) NOT NULL,
     order_status VARCHAR(20) NOT NULL
@@ -31,7 +31,7 @@ CREATE table Order_Detail(
     product_id VARCHAR(5),
     UNIQUE(order_id,product_id),
     foreign key(order_id) references Orders(order_id) ON DELETE CASCADE,
-    foreign key(product_id) references Product(product_id),
+    foreign key(product_id) references Product(product_id) ON DELETE CASCADE,
     quantity INT NOT NULL,
     unit_price DECIMAL(10,2) NOT NULL
 );
