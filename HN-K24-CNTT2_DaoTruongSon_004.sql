@@ -29,6 +29,7 @@ CREATE table Order_Detail(
 	order_detail_id INT PRIMARY KEY AUTO_INCREMENT,
     order_id INT,
     product_id VARCHAR(5),
+    UNIQUE(order_id,product_id),
     foreign key(order_id) references Orders(order_id) ON DELETE SET NULL,
     foreign key(product_id) references Product(product_id),
     quantity INT NOT NULL,
