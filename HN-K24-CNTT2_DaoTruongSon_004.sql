@@ -30,7 +30,7 @@ CREATE table Order_Detail(
     order_id INT,
     product_id VARCHAR(5),
     UNIQUE(order_id,product_id),
-    foreign key(order_id) references Orders(order_id) ON DELETE SET NULL,
+    foreign key(order_id) references Orders(order_id) ON DELETE CASCADE,
     foreign key(product_id) references Product(product_id),
     quantity INT NOT NULL,
     unit_price DECIMAL(10,2) NOT NULL
@@ -52,7 +52,6 @@ INSERT INTO Product(product_id,product_name,product_price,stock_quantity) VALUES
 ('P003','Giày sneaker',899000,30),
 ('P004','Túi xách thời trang',599000,20),
 ('P005','Đồng hồ đeo tay',1299000,15);
-
 
 -- Order
 INSERT INTO Orders(order_id,user_id,order_date,total_price,order_status) VALUES
